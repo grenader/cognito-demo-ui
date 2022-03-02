@@ -1,3 +1,8 @@
+## Modified by Igor
+This version prints all three JWT tokens on the screen.
+It also calls API with idToken, not just access token, and prints API response.
+There is also two sets of configurations for different user pools.
+
 This application was created from the create-react-app script, and demonstrates how to integrate the AWS Cognito hosted / built in sign-in and sign-up UI content with a React application. See my article [AWS Cognito example using React UI and Node.js REST APIs — part 2 (React UI app with Redux)](https://medium.com/@arron.harden/aws-cognito-example-using-react-ui-and-node-js-rest-apis-part-3-jwt-secured-rest-apis-e56d336ce306) for more information.
 
 ## Running the application
