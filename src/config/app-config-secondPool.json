@@ -1,8 +1,8 @@
 {
     "region": "ca-central-1",
-    "userPool": "ca-central-1_kt3xtAQYh",
-    "userPoolBaseUri": "https://dwwdqwdwqheb782eydbe2hdw32.auth.ca-central-1.amazoncognito.com",
-    "clientId": "5ddbge8gaj5lv1nast5rn5rgim",
+    "userPool": "ca-central-1_ZjcyuHm2Z",
+    "userPoolBaseUri": "https://qjwdbniwqbh83h873dh8w7hf8ewryfer.auth.ca-central-1.amazoncognito.com",
+    "clientId": "6ih6paeg3mo6o81o1rmac499i3",
     "callbackUri": "http://localhost:3000/callback",
     "signoutUri": "http://localhost:3000/",
     "tokenScopes": [
