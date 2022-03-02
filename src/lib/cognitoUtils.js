@@ -64,9 +64,10 @@ const getCognitoSession = () => {
         reject(new Error('Failure getting Cognito session: ' + err))
         return
       }
+      console.debug('Printing a debug info')
 
       // Resolve the promise with the session credentials
-      console.debug('Successfully got session: ' + JSON.stringify(result))
+      console.log('Successfully got session: ' + JSON.stringify(result))
       const session = {
         credentials: {
           accessToken: result.accessToken.jwtToken,

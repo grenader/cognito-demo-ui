@@ -40,10 +40,23 @@
   }
 }
 
-.Home-details {
+.Home-details, .Home-access {
   margin-top: 2em;
   font-size: 14px;
   max-width: 50%;
+}
+
+.Home-access {
+  font-size: 14px;
+  margin: 2em;
+  padding-left: 5em;
+  max-width: 90%;
+}
+.Home-access div
+{
+  text-align: left;
+  padding-bottom: 1em;
+  overflow-wrap: anywhere;
 }
 .Home-details a {
   color: #61dafb;

@@ -13,18 +13,25 @@ const mapStateToProps = state => {
 class Home extends Component {
   constructor (props) {
     super(props)
-    this.state = { apiStatus: 'Not called' }
+    this.state = { apiStatus: 'Not called'}
   }
 
   componentDidMount () {
     if (this.props.session.isLoggedIn) {
       // Call the API server GET /users endpoint with our JWT access token
       const options = {
-        url: `${appConfig.apiUri}/users`,
+        url: `${appConfig.apiUri}`,
         headers: {
+          idToken: `${this.props.session.credentials.idToken}`,
           Authorization: `Bearer ${this.props.session.credentials.accessToken}`
         }
       }
+      // this.state = { accessToken: this.props.session.credentials.accessToken }
+      this.setState({ accessToken: this.props.session.credentials.accessToken })
+      this.setState({ idToken: this.props.session.credentials.idToken })
+      this.setState({ refreshToken: this.props.session.credentials.refreshToken })
+
+      console.debug("Access token: "+this.props.session.credentials.accessToken)
 
       this.setState({ apiStatus: 'Loading...' })
       request.get(options, (err, resp, body) => {
@@ -61,10 +68,16 @@ class Home extends Component {
             <div>
               <p>You are logged in as user {this.props.session.user.userName} ({this.props.session.user.email}).</p>
               <p></p>
-              <div>
-                <div>API status: {this.state.apiStatus}</div>
-                <div className="Home-api-response">{this.state.apiResponse}</div>
+
+              <div className="Home-access">
+              <div>accessToken JWT: {this.state.accessToken}</div>
+              <div>idToken: {this.state.idToken}</div>
+              <div>refreshToken: {this.state.refreshToken}</div>
               </div>
+
+              <p></p>
+              <div>API status: {this.state.apiStatus}</div>
+              <div className="Home-api-response">{this.state.apiResponse}</div>
               <p></p>
               <a className="Home-link" href="#" onClick={this.onSignOut}>Sign out</a>
             </div>
